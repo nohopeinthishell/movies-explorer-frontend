@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background: #f5f5f5;
-  padding: 100px 80px;
+  padding: 100px 70px;
 }
 
 .techs__main-title {
@@ -46,6 +46,8 @@
 .techs__tools {
   display: flex;
   justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .techs__tool {
@@ -82,7 +84,8 @@
     margin-bottom: 22px;
   }
   .techs__subtitle {
-    margin-bottom: 83px;
+    margin-bottom: 79px;
+    font-size: 12px;
   }
   .techs__tool-text {
     font-size: 12px;
@@ -106,8 +109,8 @@
   .techs__title {
     font-size: 30px;
     letter-spacing: -1.2px;
-    margin-top: 60px;
-    margin-bottom: 24px;
+    margin-top: 49px;
+    margin-bottom: 13px;
   }
   .techs__subtitle {
     font-size: 11px;

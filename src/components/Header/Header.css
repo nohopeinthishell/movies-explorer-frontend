@@ -26,13 +26,18 @@
 .header__logo {
   width: 38px;
   height: 38px;
+  background-image: url("../../images/logo.svg");
+}
+
+.header__logo:hover {
+  opacity: 0.8;
 }
 
 .header__links {
   display: flex;
 }
 
-.header__signup {
+.header__link_signup {
   text-decoration: none;
   color: #fff;
   text-align: right;
@@ -54,7 +59,7 @@
   border-radius: 3px;
 }
 
-.header__signin-link {
+.header__link_signin {
   text-decoration: none;
   color: #000;
   font-size: 12px;
@@ -87,6 +92,10 @@
 .header__profile-container {
   display: flex;
   align-items: center;
+}
+
+.header__link:hover {
+  opacity: 0.7;
 }
 
 .header__link_profile {
@@ -127,10 +136,14 @@
   background-size: cover;
 }
 
+.header__burger-menu:hover {
+  opacity: 0.8;
+}
+
 .header__overlay {
   width: 520px;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   top: 0;
   right: 0;
   display: flex;
@@ -164,7 +177,15 @@
   width: fit-content;
 }
 
+.header__nav-link:hover {
+  opacity: 0.7;
+}
+
 .header__nav-link_checked {
+  border-bottom: 2px solid #000;
+}
+
+.header__nav-profile_checked {
   border-bottom: 2px solid #000;
 }
 
@@ -175,6 +196,10 @@
   font-weight: 500;
   line-height: 16px;
   text-decoration: none;
+}
+
+.header__nav-profile:hover {
+  opacity: 0.7;
 }
 
 .header__cross-button {
@@ -188,6 +213,10 @@
   padding: 0;
   margin: 22.44px 22.44px 105.44px 0;
   cursor: pointer;
+}
+
+.header__cross-button:hover {
+  opacity: 0.8;
 }
 
 .header__nav-profile {
@@ -242,10 +271,10 @@
   .header {
     padding: 0 14px;
   }
-  .header__signup {
+  .header__link_signup {
     font-size: 10px;
   }
-  .header__signin-link {
+  .header__link_signin {
     font-size: 10px;
   }
   .header__signin {

@@ -1,12 +1,11 @@
 .movies {
   margin: 0 auto;
   margin-bottom: 80px;
-  width: 100%;
+  max-width: fit-content;
 }
 
 .movies__button {
-  max-width: 1140px;
-  width: 100%;
+  width: 1140px;
   border: none;
   color: #000;
   text-align: center;
@@ -18,4 +17,20 @@
   height: 36px;
   padding: 0;
   cursor: pointer;
+}
+
+.movies__button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1279px) {
+  .movies__button {
+    width: 708px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies__button {
+    width: 300px;
+  }
 }

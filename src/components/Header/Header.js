@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.svg";
 import iconProfile from "../../images/icon-profile.svg";
-import crossButton from "../../images/cross-button.svg";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
@@ -33,7 +32,7 @@ function Header() {
         locationConstWhite ? "header_white" : ""
       }`}
     >
-      <img src={logo} alt="logo" className="header__logo" />
+      <Link className="header__logo" to="/" />
       {isLog ? (
         <div className="header__autorized">
           <div className="header__films">
@@ -71,14 +70,14 @@ function Header() {
               <img
                 className="header__profile-icon"
                 src={iconProfile}
-                alt="profile-icon"
+                alt="иконка профиля"
               />
             </div>
           </div>
           <button className="header__burger-menu" onClick={openNav} />
           <div
-            className={`${
-              isNavOpen ? "header__cover" : "header__cover_hidden"
+            className={`header__cover ${
+              isNavOpen ? "" : "header__cover_hidden"
             }`}
           >
             <div className="header__overlay">
@@ -117,7 +116,7 @@ function Header() {
                 <Link
                   className={`header__nav-profile ${
                     location.pathname === "/profile"
-                      ? "header__nav-link_checked"
+                      ? "header__nav-profile_checked"
                       : ""
                   }`}
                   to="/profile"
@@ -127,7 +126,7 @@ function Header() {
                 <img
                   className="header__profile-icon"
                   src={iconProfile}
-                  alt="profile-icon"
+                  alt="иконка профиля"
                 />
               </div>
             </div>
@@ -135,11 +134,11 @@ function Header() {
         </div>
       ) : (
         <div className="header__links">
-          <Link className="header__signup" to="/signup">
+          <Link className="header__link header__link_signup" to="/signup">
             Регистрация
           </Link>
           <div className="header__signin">
-            <Link className="header__signin-link" to="/signin">
+            <Link className="header__link header__link_signin" to="/signin">
               Войти
             </Link>
           </div>

@@ -11,10 +11,12 @@ function SavedMovies() {
     { name: "33 слова о дизайне", duration: "1ч 47м", image: example },
   ];
   return (
-    <div className="saved-movies">
-      <SearchForm />
-      <MoviesCardList cards={cardExampleList} />
-    </div>
+    <main className="main">
+      <section className="saved-movies">
+        <SearchForm />
+        <MoviesCardList cards={cardExampleList} />
+      </section>
+    </main>
   );
 }
 

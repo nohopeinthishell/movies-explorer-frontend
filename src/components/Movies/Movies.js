@@ -22,17 +22,19 @@ function Movies() {
     { name: "33 слова о дизайне", duration: "1ч 47м", image: example },
   ];
   return (
-    <div className="movies">
-      <SearchForm />
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <div>
-          <MoviesCardList cards={cardExampleList} />
-          <button className="movies__button">Ещё</button>
-        </div>
-      )}
-    </div>
+    <main className="main">
+      <section className="movies">
+        <SearchForm />
+        {isLoading ? (
+          <Preloader />
+        ) : (
+          <div className="movies__container">
+            <MoviesCardList cards={cardExampleList} />
+            <button className="movies__button">Ещё</button>
+          </div>
+        )}
+      </section>
+    </main>
   );
 }
 

@@ -20,7 +20,7 @@ function MoviesCard({ name, duration, image }) {
           } ${thumbler ? "movies-card__btn_off" : "movies-card__btn_on"}`}
         />
       </div>
-      <img src={image} alt="preview of film" className="movies-card__img" />
+      <img src={image} alt="превью фильма" className="movies-card__img" />
     </li>
   );
 }

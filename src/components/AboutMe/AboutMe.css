@@ -72,6 +72,10 @@
   text-decoration: none;
 }
 
+.about-me__github:hover {
+  opacity: 0.7;
+}
+
 @media screen and (max-width: 768px) {
   .about-me {
     padding: 90px 50px;
@@ -109,6 +113,10 @@
     flex-direction: column-reverse;
     align-items: center;
     margin-top: 60px;
+  }
+
+  .about-me__info {
+    margin-right: 0px;
   }
 
   .about-me__picture {

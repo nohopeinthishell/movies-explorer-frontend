@@ -5,8 +5,8 @@ function Portfolio() {
   return (
     <section className="portfolio">
       <h2 className="portfolio__title">Портфолио</h2>
-      <div className="portfolio__links">
-        <div className="portfolio__link-container">
+      <ul className="portfolio__links">
+        <li className="portfolio__link-container">
           <a
             className="portfolio__link"
             href="https://nohopeinthishell.github.io/how-to-learn/"
@@ -14,9 +14,15 @@ function Portfolio() {
           >
             Статичный сайт
           </a>
-          <p className="portfolio__arrow">↗</p>
-        </div>
-        <div className="portfolio__link-container">
+          <a
+            className="portfolio__arrow"
+            href="https://nohopeinthishell.github.io/how-to-learn/"
+            target="_blank"
+          >
+            ↗
+          </a>
+        </li>
+        <li className="portfolio__link-container">
           <a
             className="portfolio__link"
             href="https://nohopeinthishell.github.io/russian-travel/"
@@ -24,9 +30,15 @@ function Portfolio() {
           >
             Адаптивный сайт
           </a>
-          <p className="portfolio__arrow">↗</p>
-        </div>
-        <div className="portfolio__link-container">
+          <a
+            className="portfolio__arrow"
+            href="https://nohopeinthishell.github.io/russian-travel/"
+            target="_blank"
+          >
+            ↗
+          </a>
+        </li>
+        <li className="portfolio__link-container">
           <a
             className="portfolio__link"
             href="https://atlantizz.nomoredomainsicu.ru/"
@@ -34,9 +46,15 @@ function Portfolio() {
           >
             Одностраничное приложение
           </a>
-          <p className="portfolio__arrow">↗</p>
-        </div>
-      </div>
+          <a
+            className="portfolio__arrow"
+            href="https://atlantizz.nomoredomainsicu.ru/"
+            target="_blank"
+          >
+            ↗
+          </a>
+        </li>
+      </ul>
     </section>
   );
 }
