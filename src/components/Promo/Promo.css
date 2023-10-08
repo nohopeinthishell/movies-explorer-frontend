@@ -1,7 +1,12 @@
 .promo {
   background: #465dff;
+}
+
+.promo__container {
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   padding: 75px 70px;
 }
 
@@ -9,6 +14,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  max-width: 1280px;
 }
 
 .promo__title {
@@ -68,10 +74,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .promo {
+  .promo__container {
     flex-direction: column-reverse;
     align-items: center;
     padding: 140px 44px 76px 44px;
+  }
+  .promo__container {
   }
   .promo__title {
     text-align: center;
@@ -91,7 +99,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  .promo {
+  .promo__container {
     flex-direction: column-reverse;
     align-items: center;
     padding: 70px 10px 30px 10px;

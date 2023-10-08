@@ -18,12 +18,9 @@
   margin-bottom: 20px;
 }
 
-.login__input-container:last-of-type {
-  margin-bottom: 10px;
-}
-
 .login__input {
-  width: 366px;
+  box-sizing: border-box;
+  width: 100%;
   border-radius: 8px;
   background: #f9f9f9;
   height: 46px;
@@ -60,12 +57,13 @@
 }
 
 .login__validation {
+  text-align: start;
   color: #ee3465;
   font-size: 10px;
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  margin-bottom: 157px;
+  margin-bottom: 10px;
 }
 
 .login__input_incorrect {
@@ -85,6 +83,7 @@
   border: none;
   cursor: pointer;
   margin-bottom: 16px;
+  margin-top: 157px;
 }
 
 .login__button:hover {
@@ -141,7 +140,6 @@
 
   .login__input {
     font-size: 13px;
-    width: 230px;
   }
   .login__title {
     margin-top: 50px;

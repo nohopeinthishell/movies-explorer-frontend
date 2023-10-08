@@ -4,9 +4,8 @@ import iconProfile from "../../images/icon-profile.svg";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
-function Header() {
+function Header({ isLog }) {
   const location = useLocation();
-  const [isLog, setIsLog] = useState(true);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const openNav = () => {

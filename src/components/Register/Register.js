@@ -1,49 +1,93 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
+import api from "../../utils/MainApi";
+import { useFormWithValidation } from "../../hooks/useForm";
+function Register({ setIsLog }) {
+  const { values, handleChange, errors, resetForm } = useFormWithValidation();
+  const navigate = useNavigate();
+  console.log();
+  const registerOnSubmit = (e) => {
+    e.preventDefault();
+    api
+      .register(values)
+      .then((res) => {
+        api
+          .authorize(values)
+          .then((data) => {
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+              setIsLog(true);
+              resetForm();
+              navigate("/movies", { replace: true });
+            }
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  };
 
-function Register() {
   return (
     <main className="main">
       <section className="register">
-        <form className="register__form">
+        <form className="register__form" onSubmit={registerOnSubmit}>
           <Link to="/" className="register__logo" />
           <h1 className="register__title">Добро пожаловать!</h1>
           <div className="register__input-container">
             <p className="register__text">Имя</p>
             <input
+              noValidate
+              value={values.name || ""}
               type="text"
               name="name"
               required
-              className="register__input register__input_name"
+              className={`register__input register__input_name ${
+                errors.name === "" ? "" : "register__input_incorrect"
+              }`}
               minLength={2}
               maxLength={30}
               placeholder="Имя"
+              onChange={handleChange}
             ></input>
           </div>
+          <p className="register__validation">{errors.name}</p>
           <div className="register__input-container">
             <p className="register__text">E-mail</p>
             <input
-              className="register__input register__input_email"
+              noValidate
+              value={values.email || ""}
+              className={`register__input register__input_email ${
+                errors.email === "" ? "" : "register__input_incorrect"
+              }`}
               required
               type="email"
               name="email"
               placeholder="E-mail"
+              onChange={handleChange}
+              minLength={2}
             ></input>
           </div>
+          <p className="register__validation">{errors.email}</p>
           <div className="register__input-container">
             <p className="register__text">Пароль</p>
             <input
+              noValidate
+              value={values.password || ""}
               type="password"
               autoComplete="new-password"
               required
               name="password"
-              className="register__input register__input_password"
+              className={`register__input register__input_password ${
+                errors.password === "" ? "" : "register__input_incorrect"
+              }`}
               placeholder="Пароль"
+              onChange={handleChange}
+              minLength={2}
+              maxLength={30}
             ></input>
           </div>
-          <p className="register__validation">Что-то пошло не так...</p>
+          <p className="register__validation">{errors.password}</p>
           <button className="register__button">Зарегистрироваться</button>
           <p className="register__registred">
             Уже зарегистрированы?

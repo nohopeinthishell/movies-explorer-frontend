@@ -18,12 +18,8 @@
   margin-bottom: 20px;
 }
 
-.register__input-container:last-of-type {
-  margin-bottom: 10px;
-}
-
 .register__input {
-  width: 366px;
+  width: 100%;
   border-radius: 8px;
   background: #f9f9f9;
   height: 46px;
@@ -34,6 +30,7 @@
   font-size: 13px;
   font-weight: 400;
   line-height: normal;
+  box-sizing: border-box;
 }
 
 .register__title {
@@ -61,7 +58,8 @@
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  margin-bottom: 69px;
+  text-align: start;
+  margin-bottom: 10px;
 }
 
 .register__input_incorrect {
@@ -81,6 +79,7 @@
   border: none;
   cursor: pointer;
   margin-bottom: 16px;
+  margin-top: 69px;
 }
 
 .register__button:hover {
@@ -141,7 +140,6 @@
 
   .register__input {
     font-size: 13px;
-    width: 230px;
   }
   .register__title {
     margin-top: 50px;

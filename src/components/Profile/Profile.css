@@ -34,6 +34,9 @@
 
 .profile__item {
   margin: 0;
+  border: 0;
+  outline: 0;
+  text-align: end;
 }
 
 .profile__items:last-of-type {
@@ -60,6 +63,11 @@
   opacity: 0.7;
 }
 
+.profile__edit-btn_off {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .profile__signout {
   color: #ee3465;
   font-size: 13px;
@@ -68,6 +76,9 @@
   text-decoration: none;
   width: fit-content;
   align-self: center;
+  border: 0;
+  background: #fff;
+  cursor: pointer;
 }
 
 .profile__signout:hover {

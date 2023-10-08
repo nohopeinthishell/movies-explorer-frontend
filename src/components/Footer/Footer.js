@@ -8,8 +8,7 @@ function Footer() {
   const locationConst =
     location.pathname === "/movies" ||
     location.pathname === "/saved-movies" ||
-    location.pathname === "/" ||
-    location.pathname === "/profile";
+    location.pathname === "/";
   return (
     <footer className={`footer ${locationConst ? "" : "footer_hidden"}`}>
       <h2 className="footer__title">

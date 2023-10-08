@@ -1,5 +1,47 @@
 .saved-movies {
-  margin: 0 auto;
-  margin-bottom: 84px;
   max-width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.saved-movies__container {
+  width: 1140px;
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.saved-movies__button {
+  display: block;
+  width: 100%;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 6px;
+  background: #f9f9f9;
+  height: 36px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.saved-movies__button_hidden {
+  display: none;
+}
+
+.saved-movies__button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1279px) {
+  .saved-movies__container {
+    width: 708px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .saved-movies__container {
+    width: 300px;
+  }
 }

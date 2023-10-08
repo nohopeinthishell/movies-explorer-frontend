@@ -1,11 +1,18 @@
 .movies {
+  margin-bottom: 80px;
+  max-width: fit-content;
   margin: 0 auto;
   margin-bottom: 80px;
+}
+
+.movies__container {
+  width: 1140px;
+  margin: 0 auto;
   max-width: fit-content;
 }
 
 .movies__button {
-  width: 1140px;
+  width: 100%;
   border: none;
   color: #000;
   text-align: center;
@@ -19,18 +26,22 @@
   cursor: pointer;
 }
 
+.movies__button_hidden {
+  display: none;
+}
+
 .movies__button:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 1279px) {
-  .movies__button {
+  .movies__container {
     width: 708px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .movies__button {
+  .movies__container {
     width: 300px;
   }
 }

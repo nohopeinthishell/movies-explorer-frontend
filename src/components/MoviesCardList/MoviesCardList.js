@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ cards }) {
+function MoviesCardList({ movies, setSavedMovies }) {
   return (
     <section className="card-list">
       <ul className="card-list__container">
-        {cards.map((card) => {
+        {movies.map((movie, index) => {
           return (
             <MoviesCard
-              name={card.name}
-              duration={card.duration}
-              image={card.image}
+              setSavedMovies={setSavedMovies}
+              movie={movie}
+              key={index}
             />
           );
         })}
