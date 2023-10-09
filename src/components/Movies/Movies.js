@@ -33,7 +33,6 @@ function Movies() {
           }
           return findMovie;
         });
-        sliceFunc();
         setMoviesItems(findMovies);
         setIsButton(true);
         localStorage.setItem("movies", JSON.stringify(findMovies));
@@ -92,43 +91,34 @@ function Movies() {
       setFilterBy(JSON.parse(localStorage.filterBy));
       setIsButton(true);
       setMessage("Ничего не найдено");
-      sliceFunc();
     } else {
       setIsButton(true);
-      sliceFunc();
       setMoviesItems(inititalMovies);
       console.log(inititalMovies);
     }
   }, []);
 
-  const sliceFunc = () => {
-    if (window.screen.width >= 1280) {
-      setFilmSlice(9);
-      setSliceStep(3);
+  const handleResize = (e) => {
+    let width = e.target ? e.target.innerWidth : e.innerWidth; 
+        if (width >= 1280) {
+            setFilmSlice(9);
+           setSliceStep(3);
+        } else if (width < 1280 && width >= 768) {
+          setFilmSlice(6);
+          setSliceStep(2);
+        } else if (width < 768 ) {  
+          setFilmSlice(5)
+          setSliceStep(1);
+        }
     }
-    if (window.screen.width < 1280) {
-      setFilmSlice(6);
-      setSliceStep(2);
-    }
-    if (window.screen.width < 768) {
-      setFilmSlice(5);
-      setSliceStep(1);
-    }
-  };
 
-  window.onresize = function () {
-    setTimeout(() => {
-      if (window.screen.width >= 1280) {
-        setSliceStep(3);
-      }
-      if (window.screen.width < 1280) {
-        setSliceStep(2);
-      }
-      if (window.screen.width < 768) {
-        setSliceStep(1);
-      }
-    }, 1000);
-  };
+    useEffect(() => {
+      handleResize(window);
+      window.addEventListener("resize", handleResize);
+  
+      return () => window.removeEventListener("resize", handleResize);
+  }, [moviesItems]);
+  
 
   return (
     <main className="main">

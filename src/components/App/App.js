@@ -15,7 +15,7 @@ import ProtectedRouteElement from "../ProtectedRouteElement/ProtectedRoute";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
-  const [isLog, setIsLog] = useState(false);
+  const [isLog, setIsLog] = useState(true);
   const [currentUser, setCurrentUser] = useState([]);
   const navigate = useNavigate();
 
@@ -31,6 +31,9 @@ function App() {
           }
         })
         .catch((err) => console.log(err));
+    }
+    else {
+      setIsLog(false)
     }
   }
 
