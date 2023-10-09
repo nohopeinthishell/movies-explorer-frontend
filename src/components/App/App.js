@@ -31,9 +31,8 @@ function App() {
           }
         })
         .catch((err) => console.log(err));
-    }
-    else {
-      setIsLog(false)
+    } else {
+      setIsLog(false);
     }
   }
 

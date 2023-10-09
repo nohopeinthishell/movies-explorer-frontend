@@ -45,7 +45,6 @@ function SavedMovies() {
     }
   };
 
-
   function submitSerchForm(e) {
     e.preventDefault();
     const findMovies = savedMovies.filter((dataItem) => {
@@ -64,31 +63,28 @@ function SavedMovies() {
     setMoviesItems(findMovies);
   }
 
-
   const handleResize = (e) => {
-    let width = e.target ? e.target.innerWidth : e.innerWidth; 
-        if (width >= 1280) {
-            setFilmSlice(9);
-           setSliceStep(3);
-        } else if (width < 1280 && width >= 768) {
-          setFilmSlice(6);
-          setSliceStep(2);
-        } else if (width < 768 ) {  
-          setFilmSlice(5)
-          setSliceStep(1);
-        }
+    let width = e.target ? e.target.innerWidth : e.innerWidth;
+    if (width >= 1280) {
+      setFilmSlice(9);
+      setSliceStep(3);
+    } else if (width < 1280 && width >= 768) {
+      setFilmSlice(6);
+      setSliceStep(2);
+    } else if (width < 768) {
+      setFilmSlice(5);
+      setSliceStep(1);
     }
+  };
 
   useEffect(() => {
     loadSavedMovies();
-            
+
     handleResize(window);
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-}, []);
-
-
+  }, []);
 
   return (
     <main className="main">
