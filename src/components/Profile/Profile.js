@@ -4,12 +4,13 @@ import "./Profile.css";
 import api from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function Profile({ signOut }) {
+function Profile({ signOut, setCurrentUser }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [data, setData] = useState([]);
   const [nameValue, setNameValue] = useState();
   const [emailValue, setEmailValue] = useState();
   const [isChange, setIsChange] = useState(false);
+  const [message, setMessage] = useState('')
 
   const editProfile = (e) => {
     const token = localStorage.getItem("token");
@@ -17,10 +18,14 @@ function Profile({ signOut }) {
     api
       .updateProfile({ name: nameValue, email: emailValue }, token)
       .then((res) => {
+        setCurrentUser(res)
         setIsChange(false);
         setData(res);
+        setMessage('Данные профиля изменены')
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setMessage(err)
+      });
   };
 
   useEffect(() => {
@@ -78,6 +83,7 @@ function Profile({ signOut }) {
             required
           ></input>
         </div>
+        <p>{message}</p>
         <button
           className={`profile__edit-btn ${
             isChange ? "" : "profile__edit-btn_off"

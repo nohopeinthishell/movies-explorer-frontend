@@ -47,7 +47,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(currentUser)
     tokenCheck();
   }, [isLog]);
 
@@ -74,6 +73,7 @@ function App() {
                 isLog={isLog}
                 signOut={signOut}
                 element={Profile}
+                setCurrentUser={setCurrentUser}
               />
             }
           />
