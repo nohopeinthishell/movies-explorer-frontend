@@ -27,7 +27,7 @@ function Profile({ signOut }) {
     setData(currentUser);
     setNameValue(currentUser.name);
     setEmailValue(currentUser.email);
-  }, []);
+  }, [currentUser]);
 
   const onNameChange = (e) => {
     nameChange(e);

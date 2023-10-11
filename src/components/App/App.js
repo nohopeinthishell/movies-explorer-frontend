@@ -41,13 +41,15 @@ function App() {
     localStorage.removeItem("movies");
     localStorage.removeItem("isFilmShort");
     localStorage.removeItem("filterBy");
+    setCurrentUser([])
     setIsLog(false);
     navigate("/");
   }
 
   useEffect(() => {
+    console.log(currentUser)
     tokenCheck();
-  }, []);
+  }, [isLog]);
 
   return (
     <div className="App">
