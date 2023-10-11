@@ -17,7 +17,13 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .card-list__container {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media screen and (max-width: 480px) {
   .card-list__container {
     grid-template-columns: 300px;
     margin-top: 40px;

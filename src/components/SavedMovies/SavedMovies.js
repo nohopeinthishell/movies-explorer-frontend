@@ -68,10 +68,10 @@ function SavedMovies() {
     if (width >= 1280) {
       setFilmSlice(9);
       setSliceStep(3);
-    } else if (width < 1280 && width >= 768) {
+    } else if (width < 1280 && width > 480) {
       setFilmSlice(6);
       setSliceStep(2);
-    } else if (width < 768) {
+    } else if (width <= 480) {
       setFilmSlice(5);
       setSliceStep(1);
     }
