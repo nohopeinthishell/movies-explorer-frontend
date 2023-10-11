@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import api from "../../utils/MainApi";
 import ProtectedRouteElement from "../ProtectedRouteElement/ProtectedRoute";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import LoggedRouteElement from "../LoggedRoute/LoggedRoute";
 
 function App() {
   const [isLog, setIsLog] = useState(true);
@@ -77,11 +78,10 @@ function App() {
               />
             }
           />
-          <Route path="/signin" element={<Login setIsLog={setIsLog} />} />
+          <Route path="/signin" element={<LoggedRouteElement isLog={isLog} element={Login} setIsLog={setIsLog}/>} />
           <Route
             path="/signup"
-            isLog={isLog}
-            element={<Register setIsLog={setIsLog} />}
+            element={<LoggedRouteElement isLog={isLog} element={Register} setIsLog={setIsLog}/>}
           />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
