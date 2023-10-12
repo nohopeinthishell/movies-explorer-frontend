@@ -42,6 +42,7 @@ function Login({ setIsLog }) {
               placeholder="E-mail"
               onChange={handleChange}
               minLength={2}
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
             ></input>
           </div>
           <p className="login__validation">{errors.email}</p>

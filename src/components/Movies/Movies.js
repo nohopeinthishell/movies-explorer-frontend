@@ -94,7 +94,6 @@ function Movies() {
     } else {
       setIsButton(true);
       setMoviesItems(inititalMovies);
-      console.log(inititalMovies);
     }
   }, []);
 

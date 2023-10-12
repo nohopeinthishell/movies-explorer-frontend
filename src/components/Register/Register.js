@@ -4,10 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import api from "../../utils/MainApi";
 import { useFormWithValidation } from "../../hooks/useForm";
+
+const REGEX = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~H?&/=]*)$/;
+
 function Register({ setIsLog }) {
   const { values, handleChange, errors, resetForm } = useFormWithValidation();
   const navigate = useNavigate();
-  console.log();
   const registerOnSubmit = (e) => {
     e.preventDefault();
     api
@@ -66,6 +68,7 @@ function Register({ setIsLog }) {
               placeholder="E-mail"
               onChange={handleChange}
               minLength={2}
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
             ></input>
           </div>
           <p className="register__validation">{errors.email}</p>

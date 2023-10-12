@@ -4,6 +4,7 @@ import "./Profile.css";
 import api from "../../utils/MainApi";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
+
 function Profile({ signOut, setCurrentUser }) {
   const currentUser = React.useContext(CurrentUserContext);
   const [data, setData] = useState([]);
