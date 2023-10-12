@@ -52,14 +52,18 @@ function Movies() {
   }
 
   const filterShortFilm = () => {
+    localStorage.setItem("filterBy", JSON.stringify(filterBy));
     if (!isFilmShort) {
       setIsFilmShort(true);
       localStorage.setItem("isFilmShort", JSON.stringify(!isFilmShort));
-      const findMovies = moviesItems.filter((dataItem) => {
-        return dataItem.duration < 40;
+      const initialFilterMovies = inititalMovies.filter((dataItem) => {
+        const findMovie = dataItem.nameRU
+          .toLowerCase()
+          .includes(filterBy.toLowerCase()) && dataItem.duration < 40;
+        return findMovie
       });
-      localStorage.setItem("movies", JSON.stringify(findMovies));
-      setMoviesItems(findMovies);
+      localStorage.setItem("movies", JSON.stringify(initialFilterMovies));
+      setMoviesItems(initialFilterMovies);
     } else {
       setIsFilmShort(false);
       const initialFilterMovies = inititalMovies.filter((dataItem) => {
