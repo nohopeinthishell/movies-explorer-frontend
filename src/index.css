@@ -1,0 +1,21 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/font.css);
+
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
